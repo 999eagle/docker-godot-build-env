@@ -9,11 +9,11 @@ RUN apt-get -y install ca-certificates gnupg2
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
 	echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list && \
 	apt-get update && \
-	apt-get -y install mono-complete msbuild wget
+	apt-get -y install mono-complete
 
 RUN apt-get -y install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
 	libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \
-	libxi-dev libxrandr-dev mingw-w64
+	libxi-dev libxrandr-dev mingw-w64 msbuild wget
 
 ARG GODOT_VERSION=3.0.6
 
